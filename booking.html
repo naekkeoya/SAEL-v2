@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <head>
   <title>Terraza D' León</title>
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -67,21 +68,30 @@
 		<div class="contact-grids">
 			<div class="row">
 				<div class="col-lg-7 contact-left-form">
-					<form action="#" method="post" class="row">
+					<form action="create_client.php" method="POST" class="row">
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="text" class="form-control" placeholder="Nombre" required="">
+						  <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="">
+						</div>
+            <div class="col-sm-6 form-group contact-forms">
+						  <input type="text" class="form-control"  name="paterno" placeholder="Apellido Paterno" required="">
+						</div>
+            <div class="col-sm-6 form-group contact-forms">
+						  <input type="text" class="form-control"  name="materno" placeholder="Apellido Materno" required="">
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="email" class="form-control" placeholder="Correo" required="">
+						  <input type="email" class="form-control"  name="correo" placeholder="Correo" required="">
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="text" class="form-control" placeholder="Telefono" required="">
+						  <input type="text" class="form-control"  name="telefono" placeholder="Telefono" required="">
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="date" min="2019-01-01" max="2019-12-31" class="form-control" placeholder="Fecha" required="">
+						  <input type="date" min="2019-01-01" max="2019-12-31" class="form-control" name="fecha" placeholder="01-01-2019" required="">
 						</div>
+            <div class="col-sm-6 form-group contact-forms">
+              <input type="time" class="form-control" name="hora" placeholder="12:00:a.m." required="">
+            </div>
 						<div class="col-sm-6 form-group contact-forms">
-							<select class="form-control" id="adults">
+							<select class="form-control" id="paquete" name=paquete required = "">
 								<option>Paquetes</option>
 								<option>D' León</option>
 								<option>D' León Plus</option>
@@ -89,7 +99,7 @@
 							</select>
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-							<select class="form-control" id="kids">
+							<select class="form-control" id="horas-extras" name="horas_extras" required ="">
 								<option>Horas Extras</option>
 								<option>1</option>
 								<option>2</option>
