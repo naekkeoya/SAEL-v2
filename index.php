@@ -1,3 +1,17 @@
+<?php
+	$conexion = mysqli_connect('localhost','root','','sael');
+	if (!$conexion)
+	{
+
+	}
+	else
+	{
+    $sesion = mysqli_query($conexion, "SELECT *FROM sesion ORDER BY id_sesion DESC LIMIT 1");
+    $sesion = mysqli_fetch_array($sesion);
+    $username = $sesion[1];
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -37,17 +51,24 @@
 		<!-- nav -->
 		<nav class="py-md-4 py-3 d-lg-flex">
 			<div id="logo">
-				<h1 class="mt-md-0 mt-2"> <a href="index.html"><img src="images/logo.png"></span> D' León </a></h1>
+				<h1 class="mt-md-0 mt-2"> <a href="index.php"><img src="images/logo.png"></span> D' León </a></h1>
 			</div>
 			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
 			<input type="checkbox" id="drop" />
 			<ul class="menu ml-auto mt-1">
-				<li class="active"><a href="index.html">Inicio</a></li>
+				<li class="active"><a href="index.php">Inicio</a></li>
 				<li class=""><a href="about.html">Sobre nosotros</a></li>
 				<li class=""><a href="packages.html">Paquetes</a></li>
 				<li class=""><a href="contact.html">Contactanos</a></li>
 				<li class="booking"><a href="booking.html">Reserva ahora</a></li>
-        <li class=""><a href=login.html>Iniciar sesión</a></li>
+        <li class=""><a href="menu.html"><?php echo $username ?></a></li>
+        <li class=""><a href="index.html">Cerrar Sesión</a></li>
+				<?php
+				if ($sesion[3] == "Administrador")
+				{
+					echo "<li class=''><a href='register.html'>Registrar</a></li>";
+				}
+				?>
 			</ul>
 		</nav>
 		<!-- //nav -->
