@@ -10,6 +10,7 @@
     $sesion = mysqli_query($conexion, "SELECT *FROM sesion ORDER BY id_sesion DESC LIMIT 1");
     $sesion = mysqli_fetch_array($sesion);
     $username = $sesion[1];
+    $tipo = $sesion[3];
 		$estado = $sesion[4];
 		echo "<!DOCTYPE html>
     <html lang='es'>
@@ -56,11 +57,11 @@
     				<li class=''><a href='index.php'>Inicio</a></li>
     				<li class=''><a href='about.php'>Sobre nosotros</a></li>
     				<li class=''><a href='packages.php'>Paquetes</a></li>
-    				<li class=''><a href='contact.php'>Contactanos</a></li";
+    				<li class=''><a href='contact.php'>Contactanos</a></li>";
             if ($estado == 'On')
 						{
 							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
-							echo "<li class=''><a href='menu.php'>$username</a></li>";
+							echo "<li class='active'><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}
 						else
@@ -85,44 +86,75 @@
 
     <!-- tour packages -->
     <section class='packages pt-5'>
-      		<h2 class='heading text-capitalize text-center'>Registro de usuarios</h2>
-    	<div class='container py-lg-4 py-sm-3 col-sm-6 d-flex flex-row '>
+    	<div class='container py-lg-4 py-sm-3'>
+    		<h2 class='heading text-capitalize text-center'>Módulos SAEL</h2>
+    		<br>
+    		<div class='row'>
 
-        <fieldset class='fieldset2 container align-items-center'>
-          <h2> Registrar usuario </h2>
-          <br>
-            <form id='register-form' action='registers.php' method='POST' class='contact-forms'>
-            <input type='radio' id='eleccion1' name='tipo' value='Administrador'>
-            <label for='eleccion1'>Administrador</label>
-            <input type='radio' id='eleccion2'checked='' name='tipo' value='Agente'>
-            <label for='eleccion2'>Agente</label>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='name' type='text' name='nombre' placeholder='Nombre(s)' class='form-control' required='' data-regexp='word'><br>
+          <div class=' col-12'>
+              <div class='row'>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <img class='card-img-top' src='images/client.jpg' alt='Card image cap'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Módulo de Clientes</h5>
+                      <p class='card-text'>Permite administrar a los Clientes y su información.</p>
+                      <a href='mcliente.html' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <img class='card-img-top' src='images/event.jpg' alt='Card image cap'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Módulo de Eventos</h5>
+                      <p class='card-text'>Permite administrar los Eventos de los clientes.</p>
+                      <a href='mevento.html' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='firstsurname' type='text' name='paterno' class='form-control' placeholder='Apellido Paterno'  required='' data-regexp='word'><br>
+              <div class='row'>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <img class='card-img-top' src='images/provider.jpg' alt='Card image cap'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Módulo Proveedores</h5>
+                      <p class='card-text'>Permite administrar los Proveedores y sus productos.</p>
+                      <a href='mproveedores.html' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <img class='card-img-top' src='images/promotion.png' alt='Card image cap'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Módulo de Promociones y descuentos.</h5>
+                      <p class='card-text'>Permite administrar </p>
+                      <a href='mpromociones.html' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>";
+                if ($tipo == "Administrador")
+                {
+                  echo "<div class='col-sm-6 col-12'>
+                    <div class='card'>
+                      <img class='card-img-top' src='images/employee.jpg' alt='Card image cap'>
+                      <div class='card-body'>
+                        <h5 class='card-title'>Módulo de Empleados.</h5>
+                        <p class='card-text'>Permite administrar los empleados.</p>
+                        <a href='mpromociones.html' class='btn btn-primary'>Acceder</a>
+                      </div>
+                    </div>
+                  </div>";
+                }
+                echo "
               </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='secondsurname' type='text' name='materno' placeholder='Apellido Materno' class='form-control' required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input type='date' min='1980-01-01' max='2019-12-31' name='fecha' class='form-control' placeholder='Fecha' required=''>
-              </div>
-              <br>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='regemail' type='email' name='correo' placeholder='Correo electrónico' class='form-control' required='' data-regexp='email'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='regpassword' type='password' name='password' placeholder='Contraseña' class='form-control' required='' data-regexp='password'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='confirmpass' type='password' name='confirmar' placeholder='Confirmar contraseña' class='form-control' required='' data-regexp='password'><br>
-              </div>
-              <div class='col-md-12 booking-button'>
-                <button class='btn btn-block sent-butnn'>Registar</button>
-              </div>
-            </form>
-        </fieldset>
+            </div>
+
+
+        </div>
       </div>
     </section>
     <!-- tour packages -->
@@ -190,8 +222,8 @@
     </div>
     <!-- move top -->
 
-
     </body>
-    </html>";
+    </html>
+";
   }
 ?>

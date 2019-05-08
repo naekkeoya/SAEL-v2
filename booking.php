@@ -11,7 +11,7 @@
     $sesion = mysqli_fetch_array($sesion);
     $username = $sesion[1];
 		$estado = $sesion[4];
-		echo "<!DOCTYPE html>
+    echo "<!DOCTYPE html>
     <html lang='es'>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
@@ -56,10 +56,10 @@
     				<li class=''><a href='index.php'>Inicio</a></li>
     				<li class=''><a href='about.php'>Sobre nosotros</a></li>
     				<li class=''><a href='packages.php'>Paquetes</a></li>
-    				<li class=''><a href='contact.php'>Contactanos</a></li";
+    				<li class=''><a href='contact.php'>Contactanos</a></li>
+    				<li class='booking'><a href='booking.php'>Reserva ahora</a></li>";
             if ($estado == 'On')
 						{
-							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
 							echo "<li class=''><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}
@@ -83,49 +83,64 @@
     <!-- //banner -->
 
 
-    <!-- tour packages -->
-    <section class='packages pt-5'>
-      		<h2 class='heading text-capitalize text-center'>Registro de usuarios</h2>
-    	<div class='container py-lg-4 py-sm-3 col-sm-6 d-flex flex-row '>
-
-        <fieldset class='fieldset2 container align-items-center'>
-          <h2> Registrar usuario </h2>
-          <br>
-            <form id='register-form' action='registers.php' method='POST' class='contact-forms'>
-            <input type='radio' id='eleccion1' name='tipo' value='Administrador'>
-            <label for='eleccion1'>Administrador</label>
-            <input type='radio' id='eleccion2'checked='' name='tipo' value='Agente'>
-            <label for='eleccion2'>Agente</label>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='name' type='text' name='nombre' placeholder='Nombre(s)' class='form-control' required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='firstsurname' type='text' name='paterno' class='form-control' placeholder='Apellido Paterno'  required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='secondsurname' type='text' name='materno' placeholder='Apellido Materno' class='form-control' required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input type='date' min='1980-01-01' max='2019-12-31' name='fecha' class='form-control' placeholder='Fecha' required=''>
-              </div>
-              <br>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='regemail' type='email' name='correo' placeholder='Correo electrónico' class='form-control' required='' data-regexp='email'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='regpassword' type='password' name='password' placeholder='Contraseña' class='form-control' required='' data-regexp='password'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='confirmpass' type='password' name='confirmar' placeholder='Confirmar contraseña' class='form-control' required='' data-regexp='password'><br>
-              </div>
-              <div class='col-md-12 booking-button'>
-                <button class='btn btn-block sent-butnn'>Registar</button>
-              </div>
-            </form>
-        </fieldset>
-      </div>
+    <!-- Booking -->
+    <section class='contact py-5'>
+    	<div class='container py-lg-5 py-sm-4'>
+    		<h2 class='heading text-capitalize text-center mb-lg-5 mb-4'>Reserva</h2>
+    		<div class='contact-grids'>
+    			<div class='row'>
+    				<div class='col contact-left-form'>
+    					<form action='create_client.php' method='POST' class='row'>
+    						<div class='col-sm-6 form-group contact-forms'>
+    						  <input type='text' class='form-control' name='nombre' placeholder='Nombre' required=''>
+    						</div>
+                <div class='col-sm-6 form-group contact-forms'>
+    						  <input type='text' class='form-control'  name='paterno' placeholder='Apellido Paterno' required=''>
+    						</div>
+                <div class='col-sm-6 form-group contact-forms'>
+    						  <input type='text' class='form-control'  name='materno' placeholder='Apellido Materno' required=''>
+    						</div>
+    						<div class='col-sm-6 form-group contact-forms'>
+    						  <input type='email' class='form-control'  name='correo' placeholder='Correo' required=''>
+    						</div>
+    						<div class='col-sm-6 form-group contact-forms'>
+    						  <input type='text' class='form-control'  name='telefono' placeholder='Telefono' required=''>
+    						</div>
+    						<div class='col-sm-6 form-group contact-forms'>
+    						  <input type='date' min='2019-01-01' max='2019-12-31' class='form-control' name='fecha' value='2019-01-01' required=''>
+    						</div>
+                <div class='col-sm-6 form-group contact-forms'>
+                  <input type='time' class='form-control' name='hora' value='12:00' required=''>
+                </div>
+    						<div class='col-sm-6 form-group contact-forms'>
+    							<select class='form-control' id='paquete' name=paquete required = ''>
+    								<option>Paquetes</option>
+    								<option>D' León</option>
+    								<option>D' León Plus</option>
+    								<option>D' León Especial</option>
+    							</select>
+    						</div>
+    						<div class='col-sm-6 form-group contact-forms'>
+    							<select class='form-control' id='horas-extras' name='horas_extras' required =''>
+    								<option>Horas Extras</option>
+    								<option>1</option>
+    								<option>2</option>
+    								<option>3</option>
+    								<option>4</option>
+    								<option>5</option>
+    							</select>
+    						</div>
+    						<div class='col-md-12 booking-button'>
+    							<button class='btn btn-block sent-butnn'>Reservar Ahora</button>
+    						</div>
+    					</form>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
     </section>
-    <!-- tour packages -->
+    <!-- //Booking -->
+
 
     <!--footer -->
     <footer>
@@ -192,6 +207,7 @@
 
 
     </body>
-    </html>";
+    </html>
+";
   }
-?>
+  ?>

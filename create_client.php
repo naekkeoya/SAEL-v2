@@ -26,27 +26,24 @@
 			$query = mysqli_query($conexion, "SELECT *FROM cliente ORDER BY id_cliente DESC LIMIT 1");
 			$query = mysqli_fetch_array($query);
 			$id = $query[0];
-			$query = mysqli_query($conexion, "SELECT *FROM agente ORDER BY id_agente DESC LIMIT 1");
+			$query = mysqli_query($conexion, "SELECT *FROM sesion ORDER BY id_sesion DESC LIMIT 1");
+			$query = mysqli_fetch_array($query);
+			$id_agente = $query[1];
+			$query = mysqli_query($conexion, "SELECT *FROM usuarios WHERE nombre_usuario = '$id_agente'");
 			$query = mysqli_fetch_array($query);
 			$id_agente = $query[0];
-			if ($paquete == "Básico")
-			{
-				$id_paquete = 1;
-			}
-			if ($paquete == "D' León")
-			{
-				$id_paquete = 2;
-			}
-			if ($paquete == "D' León Plus")
-			{
-				$id_paquete = 3;
-			}
-			if ($paquete == "D' León Especial")
-			{
-				$id_paquete = 4;
-			}
+			$query = mysqli_query($conexion, "SELECT *FROM paquete ORDER BY id_paquete DESC LIMIT 1");
+			$query = mysqli_fetch_array($query);
+			$id_paquete = $query[0];
 			$query= mysqli_query($conexion, "INSERT INTO evento (id_evento, id_cliente, id_agente, id_paquete, fecha_evento, hora_evento, duracion_evento) VALUES (NULL, '$id', '$id_agente', '$id_paquete', '$fecha', '$hora', '$duracion')");
-			header("refresh:0;url=booking.html"); 
+			if (!$query)
+			{
+
+			}
+			else
+			{
+				header("refresh:0;url=booking.php");
+			}
 		}
 	}
 ?>

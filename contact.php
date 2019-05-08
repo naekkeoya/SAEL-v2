@@ -11,7 +11,8 @@
     $sesion = mysqli_fetch_array($sesion);
     $username = $sesion[1];
 		$estado = $sesion[4];
-		echo "<!DOCTYPE html>
+    $direcion = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.3077828948462!2d-103.32714258507363!3d20.65705358620089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b23a9bbba80d%3A0xdacdb7fd592feb90!2sCentro+Universitario+de+Ciencias+Exactas+e+Ingenier%C3%ADas!5e0!3m2!1ses!2smx!4v1557288006141!5m2!1ses!2smx' width='600' height='450' frameborder='0' style='border:0'";
+    echo "<!DOCTYPE html>
     <html lang='es'>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
@@ -55,8 +56,8 @@
     			<ul class='menu ml-auto mt-1'>
     				<li class=''><a href='index.php'>Inicio</a></li>
     				<li class=''><a href='about.php'>Sobre nosotros</a></li>
-    				<li class=''><a href='packages.php'>Paquetes</a></li>
-    				<li class=''><a href='contact.php'>Contactanos</a></li";
+    				<li class=''><a href='packages.html'>Paquetes</a></li>
+    				<li class='active'><a href='contact.php'>Contactanos</a></li>";
             if ($estado == 'On')
 						{
 							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
@@ -83,49 +84,85 @@
     <!-- //banner -->
 
 
-    <!-- tour packages -->
-    <section class='packages pt-5'>
-      		<h2 class='heading text-capitalize text-center'>Registro de usuarios</h2>
-    	<div class='container py-lg-4 py-sm-3 col-sm-6 d-flex flex-row '>
+    <!-- Contact -->
+    <section class='contact py-5'>
+    	<div class='container py-lg-5 py-sm-3'>
+    			<h2 class='heading text-capitalize text-center mb-sm-5 mb-4'>Ponte en contacto con nosotros</h2>
+    			<ul class='list-unstyled row text-center mt-lg-5 mt-4 px-lg-5'>
+                    <li class='col-md-4 col-sm-6 adress-w3pvt-info'>
+                        <div class=' adress-icon'>
+                            <span class='fa fa-map-marker'></span>
+                        </div>
 
-        <fieldset class='fieldset2 container align-items-center'>
-          <h2> Registrar usuario </h2>
-          <br>
-            <form id='register-form' action='registers.php' method='POST' class='contact-forms'>
-            <input type='radio' id='eleccion1' name='tipo' value='Administrador'>
-            <label for='eleccion1'>Administrador</label>
-            <input type='radio' id='eleccion2'checked='' name='tipo' value='Agente'>
-            <label for='eleccion2'>Agente</label>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='name' type='text' name='nombre' placeholder='Nombre(s)' class='form-control' required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='firstsurname' type='text' name='paterno' class='form-control' placeholder='Apellido Paterno'  required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='secondsurname' type='text' name='materno' placeholder='Apellido Materno' class='form-control' required='' data-regexp='word'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input type='date' min='1980-01-01' max='2019-12-31' name='fecha' class='form-control' placeholder='Fecha' required=''>
-              </div>
-              <br>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='regemail' type='email' name='correo' placeholder='Correo electrónico' class='form-control' required='' data-regexp='email'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='regpassword' type='password' name='password' placeholder='Contraseña' class='form-control' required='' data-regexp='password'><br>
-              </div>
-              <div class='col-sm-12 form-group contact-forms'>
-                <input id='confirmpass' type='password' name='confirmar' placeholder='Confirmar contraseña' class='form-control' required='' data-regexp='password'><br>
-              </div>
-              <div class='col-md-12 booking-button'>
-                <button class='btn btn-block sent-butnn'>Registar</button>
-              </div>
-            </form>
-        </fieldset>
-      </div>
+                        <h6>Ubicación</h6>
+                        <p>D' León
+                            <br>Blvd. Gral. Marcelino García Barragán 1421, Olímpica, 44430 Guadalajara, Jal. </p>
+                    </li>
+
+                    <li class='col-md-4 col-sm-6 adress-w3pvt-info mt-sm-0 mt-4'>
+                        <div class='adress-icon'>
+                            <span class='fa fa-envelope-open-o'></span>
+                        </div>
+                        <h6>Telefono y Correo</h6>
+                        <p>01 33 1378 5900</p>
+                        <a href='mailto:eventosdleon@example.com' class='mail'>eventosdleon@gmail.com</a>
+                    </li>
+                    <li class='col-md-4 col-sm-6 adress-w3pvt-info mt-md-0 mt-4'>
+
+                        <div class='adress-icon'>
+                            <span class='fa fa-comments-o'></span>
+                        </div>
+
+                        <h6>Mantente en contacto</h6>
+    					<ul class='social_section_1info mt-2'>
+    						<li class='mb-2 facebook'><a href='https://www.facebook.com/udgcucei/'><span class='fa fa-facebook'></span></a></li>
+    						<li class='mb-2 twitter'><a href='https://twitter.com/udgcucei'><span class='fa fa-twitter'></span></a></li>
+    						<li class='google-chrome'><a href='http://www.cucei.udg.mx/'><img src='images/chrome.png'></a></li>
+    						<li class='mapsdirections'><a href='https://goo.gl/maps/FnGeJq2cijwb9G1X8'><img src='images/maps.png'></a></li>
+    					</ul>
+                    </li>
+                </ul>
+
+    			<div class='contact-grids mt-5'>
+    				<div class='row'>
+    					<div class='col-lg-6 col-md-6 contact-left-form'>
+    						<form action='#' method='post'>
+    							<div class=' form-group contact-forms'>
+    							  <input type='text' class='form-control' placeholder='Nombre' required=''>
+    							</div>
+    							<div class='form-group contact-forms'>
+    							  <input type='email' class='form-control' placeholder='Correo' required=''>
+    							</div>
+    							<div class='form-group contact-forms'>
+    							  <input type='text' class='form-control' placeholder='Telefono' required=''>
+    							</div>
+    							<div class='form-group contact-forms'>
+    							  <textarea class='form-control' placeholder='Mensaje' rows='3' required=''></textarea>
+    							</div>
+    							<button class='btn btn-block sent-butnn'>Enviar</button>
+    						</form>
+    					</div>
+    					<div class='col-lg-6 col-md-6 contact-right pl-lg-5'>
+    						<h4>¿Tiene alguna pregunta sobre nosotros? Escríbenos.</h4>
+    						<p class='mt-md-4 mt-2'>En D' León nos gusta Satisfacer a nuestros
+                   clientes es por eso que nos ponemos a su servicio para resolver
+                   sus dudas o escuchar sus quejas, reclamos y sugerencias, con
+                   el proposito de ofrecer un mejor servicio.</p>
+    						<h5 class='mt-lg-5 mt-3'>Horario</h5>
+    						<p class='mt-3'>Lunes a Viernes: 09:00 a.m. to 06:00 p.m.</p>
+    						<p>Sabados y Domingos: 10:00 a.m. a 04:00 p.m.</p>
+    					</div>
+    				</div>
+    			</div>
+    	</div>
     </section>
-    <!-- tour packages -->
+    <!-- //Contact -->
+
+    <!-- map -->
+    <div class='map p-2'>
+    	<iframe src='$direcion' allowfullscreen>Dirección</iframe>
+    </div>
+    <!-- //map -->
 
     <!--footer -->
     <footer>
@@ -192,6 +229,7 @@
 
 
     </body>
-    </html>";
+    </html>
+";
   }
-?>
+  ?>
