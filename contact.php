@@ -13,7 +13,7 @@
 		$estado = $sesion[4];
     $direcion = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.3077828948462!2d-103.32714258507363!3d20.65705358620089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b23a9bbba80d%3A0xdacdb7fd592feb90!2sCentro+Universitario+de+Ciencias+Exactas+e+Ingenier%C3%ADas!5e0!3m2!1ses!2smx!4v1557288006141!5m2!1ses!2smx' width='600' height='450' frameborder='0' style='border:0'";
     echo "<!DOCTYPE html>
-    <html lang='es'>
+    <html lang='es'> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
       <title>Terraza D' León</title>
@@ -56,11 +56,11 @@
     			<ul class='menu ml-auto mt-1'>
     				<li class=''><a href='index.php'>Inicio</a></li>
     				<li class=''><a href='about.php'>Sobre nosotros</a></li>
-    				<li class=''><a href='packages.html'>Paquetes</a></li>
+    				<li class=''><a href='packages.php'>Paquetes</a></li>
     				<li class='active'><a href='contact.php'>Contactanos</a></li>";
             if ($estado == 'On')
 						{
-							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
+							
 							echo "<li class=''><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}

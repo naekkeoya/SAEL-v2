@@ -10,10 +10,10 @@
     $sesion = mysqli_query($conexion, "SELECT *FROM sesion ORDER BY id_sesion DESC LIMIT 1");
     $sesion = mysqli_fetch_array($sesion);
     $username = $sesion[1];
+    $tipo = $sesion[3];
 		$estado = $sesion[4];
-    echo "<!DOCTYPE html>
+		echo "<!DOCTYPE html>
     <html lang='es'> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
       <title>Terraza D' León</title>
       <link rel='shortcut icon' href='images/favicon.ico'>
@@ -55,10 +55,12 @@
     			<ul class='menu ml-auto mt-1'>
     				<li class=''><a href='index.php'>Inicio</a></li>
     				<li class=''><a href='about.php'>Sobre nosotros</a></li>
+    				
     				<li class=''><a href='packages.php'>Paquetes</a></li>
     				<li class=''><a href='contact.php'>Contactanos</a></li>";
-            if ($estado == 'On')
+						if ($estado == 'On')
 						{
+
 							echo "<li class='active'><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}
@@ -82,67 +84,82 @@
     <!-- //banner -->
 
 
-    <!-- Booking -->
-    <section class='contact py-5'>
-    	<div class='container py-lg-5 py-sm-4'>
-    		<h2 class='heading text-capitalize text-center mb-lg-5 mb-4'>Reserva</h2>
-    		<div class='contact-grids'>
-    			<div class='row'>
-    				<div class='col contact-left-form'>
-    					<form action='create_client.php' method='POST' class='row'>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control' name='nombre' placeholder='Nombre' required=''>
-    						</div>
-                <div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control'  name='paterno' placeholder='Apellido Paterno' required=''>
-    						</div>
-                <div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control'  name='materno' placeholder='Apellido Materno' required=''>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='email' class='form-control'  name='correo' placeholder='Correo' required=''>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control'  name='telefono' placeholder='Telefono' required=''>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='date' min='2019-01-01' max='2019-12-31' class='form-control' name='fecha' value='2019-01-01' required=''>
-    						</div>
-                <div class='col-sm-6 form-group contact-forms'>
-                  <input type='time' class='form-control' name='hora' value='12:00' required=''>
-                </div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    							<select class='form-control' id='paquete' name=paquete required = ''>
-										<option>Básico</option>
-    								<option>D' León</option>
-    								<option>D' León Plus</option>
-    								<option>D' León Especial</option>
-    							</select>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    							<select class='form-control' id='horas-extras' name='horas_extras' required =''>
-										<option>0</option>
-    								<option>1</option>
-    								<option>2</option>
-    								<option>3</option>
-    								<option>4</option>
-    								<option>5</option>
-    							</select>
-    						</div>
-    						<div class='col-md-12 booking-button'>
-    							<button class='btn btn-block sent-butnn'>Reservar</button>
-    						</div>
-    					</form>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+    <!-- tour packages -->
+    <section class='packages pt-5'>
+      <h2 class='heading text-capitalize text-center'>Mostrar Proveedores</h2>
+    	<div class='container py-lg-4 py-sm-3 col-sm-6 d-flex flex-row '>
+			<table class='egt'>
+			<style>
+			table
+			{
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th
+			{
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even)
+			{
+  			background-color: #dddddd;
+			}
+			</style>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Telefono</th>
+				<th>Giro</th>
+				<th>Correo</th>
+				<th>Estado</th>
+				<th>Ciudad</th>
+				<th>Colonia</th>
+				<th>Calle</th>
+				<th>Numero</th>
+			</tr>";
+			$conexion = mysqli_connect('localhost','root','','sael');
+			if (!$conexion)
+			{
+
+			}
+			else
+			{
+				 $datos = mysqli_query($conexion, "SELECT * FROM proveedor");
+			   if (!$datos)
+			   {
+
+			   }
+			   else
+				 {
+					 while ($fila = mysqli_fetch_array($datos))
+					 {
+						 echo
+						 "<tr>
+						 	<td>$fila[0]</td>
+						 	<td>$fila[1]</td>
+						 	<td>$fila[2]</td>
+						 	<td>$fila[3]</td>
+						 	<td>$fila[4]</td>
+						 	<td>$fila[5]</td>
+						 	<td>$fila[6]</td>
+						 	<td>$fila[7]</td>
+						 	<td>$fila[8]</td>
+						 	<td>$fila[9]</td>
+						 </tr>";
+					 }
+				 }
+			}
+			echo "
+			</table>
+      </div>
     </section>
-    <!-- //Booking -->
 
-
-    <!--footer -->
-    <footer>
+    </footer>
+		<footer>
     <section class='footer footer_w3layouts_section_1its py-5'>
     	<div class='container py-lg-4 py-3'>
     		<div class='row footer-top'>
@@ -206,7 +223,6 @@
 
 
     </body>
-    </html>
-";
+    </html>";
   }
   ?>

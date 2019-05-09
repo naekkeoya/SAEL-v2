@@ -10,8 +10,9 @@
     $sesion = mysqli_query($conexion, "SELECT *FROM sesion ORDER BY id_sesion DESC LIMIT 1");
     $sesion = mysqli_fetch_array($sesion);
     $username = $sesion[1];
+    $tipo = $sesion[3];
 		$estado = $sesion[4];
-    echo "<!DOCTYPE html>
+		echo "<!DOCTYPE html>
     <html lang='es'> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
@@ -59,6 +60,7 @@
     				<li class=''><a href='contact.php'>Contactanos</a></li>";
             if ($estado == 'On')
 						{
+
 							echo "<li class='active'><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}
@@ -82,64 +84,71 @@
     <!-- //banner -->
 
 
-    <!-- Booking -->
-    <section class='contact py-5'>
-    	<div class='container py-lg-5 py-sm-4'>
-    		<h2 class='heading text-capitalize text-center mb-lg-5 mb-4'>Reserva</h2>
-    		<div class='contact-grids'>
-    			<div class='row'>
-    				<div class='col contact-left-form'>
-    					<form action='create_client.php' method='POST' class='row'>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control' name='nombre' placeholder='Nombre' required=''>
-    						</div>
-                <div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control'  name='paterno' placeholder='Apellido Paterno' required=''>
-    						</div>
-                <div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control'  name='materno' placeholder='Apellido Materno' required=''>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='email' class='form-control'  name='correo' placeholder='Correo' required=''>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='text' class='form-control'  name='telefono' placeholder='Telefono' required=''>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    						  <input type='date' min='2019-01-01' max='2019-12-31' class='form-control' name='fecha' value='2019-01-01' required=''>
-    						</div>
-                <div class='col-sm-6 form-group contact-forms'>
-                  <input type='time' class='form-control' name='hora' value='12:00' required=''>
-                </div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    							<select class='form-control' id='paquete' name=paquete required = ''>
-										<option>Básico</option>
-    								<option>D' León</option>
-    								<option>D' León Plus</option>
-    								<option>D' León Especial</option>
-    							</select>
-    						</div>
-    						<div class='col-sm-6 form-group contact-forms'>
-    							<select class='form-control' id='horas-extras' name='horas_extras' required =''>
-										<option>0</option>
-    								<option>1</option>
-    								<option>2</option>
-    								<option>3</option>
-    								<option>4</option>
-    								<option>5</option>
-    							</select>
-    						</div>
-    						<div class='col-md-12 booking-button'>
-    							<button class='btn btn-block sent-butnn'>Reservar</button>
-    						</div>
-    					</form>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-    <!-- //Booking -->
+    <!-- tour packages -->
+    <section class='packages pt-5'>
+    	<div class='container py-lg-4 py-sm-3'>
+    		<h2 class='heading text-capitalize text-center'>Módulo Empleados</h2>
+    		<br>
+    		<div class='row'>
 
+          <div class=' col-12'>
+              <div class='row'>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Agregar Empleado</h5>
+                      <p class='card-text'>Permite agregar nuevos empleados.</p>
+                      <a href='register.php' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Mostrar Empleados</h5>
+                      <p class='card-text'>Permite ver todos los empleados que se tienen actualmente.</p>
+                      <a href='show_employee.php' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Editar Empleado</h5>
+                      <p class='card-text'>Permite editar la información de un empleado registrado.</p>
+                      <a href='search_employee.php' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Eliminar Empleado.</h5>
+                      <p class='card-text'>Permite eliminar un empleado registrado.</p>
+                      <a href='search_employee_delete.php' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+								<div class='col-sm-6 col-12'>
+                  <div class='card'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>Mostrar Sesiones.</h5>
+                      <p class='card-text'>Permite ver las sesiones activas actualmente.</p>
+                      <a href='show_sesion.php' class='btn btn-primary'>Acceder</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+    </section>
+    <!-- tour packages -->
 
     <!--footer -->
     <footer>
@@ -204,9 +213,8 @@
     </div>
     <!-- move top -->
 
-
     </body>
     </html>
 ";
   }
-  ?>
+?>

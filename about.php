@@ -12,7 +12,7 @@
     $username = $sesion[1];
 		$estado = $sesion[4];
     echo "<!DOCTYPE html>
-    <html lang='es'>
+    <html lang='es'> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
       <title>Terraza D' León</title>
@@ -59,7 +59,7 @@
     				<li class=''><a href='contact.php'>Contactanos</a></li>";
             if ($estado == 'On')
 						{
-							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
+							
 							echo "<li class=''><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}

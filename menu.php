@@ -13,7 +13,7 @@
     $tipo = $sesion[3];
 		$estado = $sesion[4];
 		echo "<!DOCTYPE html>
-    <html lang='es'>
+    <html lang='es'> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <head>
       <title>Terraza D' León</title>
@@ -60,7 +60,7 @@
     				<li class=''><a href='contact.php'>Contactanos</a></li>";
             if ($estado == 'On')
 						{
-							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
+
 							echo "<li class='active'><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}
@@ -99,7 +99,7 @@
                     <div class='card-body'>
                       <h5 class='card-title'>Módulo de Clientes</h5>
                       <p class='card-text'>Permite administrar a los Clientes y su información.</p>
-                      <a href='mcliente.html' class='btn btn-primary'>Acceder</a>
+                      <a href='mclient.php' class='btn btn-primary'>Acceder</a>
                     </div>
                   </div>
                 </div>
@@ -110,7 +110,7 @@
                     <div class='card-body'>
                       <h5 class='card-title'>Módulo de Eventos</h5>
                       <p class='card-text'>Permite administrar los Eventos de los clientes.</p>
-                      <a href='mevento.html' class='btn btn-primary'>Acceder</a>
+                      <a href='mevent.php' class='btn btn-primary'>Acceder</a>
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@
                     <div class='card-body'>
                       <h5 class='card-title'>Módulo Proveedores</h5>
                       <p class='card-text'>Permite administrar los Proveedores y sus productos.</p>
-                      <a href='mproveedores.html' class='btn btn-primary'>Acceder</a>
+                      <a href='mpartner.php' class='btn btn-primary'>Acceder</a>
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@
                     <div class='card-body'>
                       <h5 class='card-title'>Módulo de Promociones y descuentos.</h5>
                       <p class='card-text'>Permite administrar </p>
-                      <a href='mpromociones.html' class='btn btn-primary'>Acceder</a>
+                      <a href='mpromo.php' class='btn btn-primary'>Acceder</a>
                     </div>
                   </div>
                 </div>";
@@ -144,7 +144,7 @@
                       <div class='card-body'>
                         <h5 class='card-title'>Módulo de Empleados.</h5>
                         <p class='card-text'>Permite administrar los empleados.</p>
-                        <a href='mpromociones.html' class='btn btn-primary'>Acceder</a>
+                        <a href='memployee.php' class='btn btn-primary'>Acceder</a>
                       </div>
                     </div>
                   </div>";

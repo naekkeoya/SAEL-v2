@@ -12,7 +12,7 @@
     $username = $sesion[1];
 		$estado = $sesion[4];
 		echo "<!DOCTYPE html>
-		<html lang='es'>
+		<html lang='es'> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		<head>
 		  <title>Terraza D' León</title>
@@ -61,7 +61,7 @@
 						<li class=''><a href='contact.php'>Contactanos</a></li>";
 						if ($estado == 'On')
 						{
-							echo "<li class=''><a href='booking.php'>Reserva ahora</a></li>";
+							
 							echo "<li class=''><a href='menu.php'>$username</a></li>";
 			        echo "<li class=''><a href='logout.php'>Cerrar Sesión</a></li>";
 						}
@@ -93,7 +93,7 @@
 										<h3 class='text-wh'>Espacio creado para ofrecer comodidad y frescura.</h3>
 										<div class='buttons mt-4'>
 											<a href='about.php' class='btn mr-2'>Sobre nosotros</a>
-											<a href='booking.php' class='btn'>Reservar</a>
+											<a href='packages.php' class='btn'>Paquetes</a>
 										</div>
 									</div>
 								</div>
@@ -108,7 +108,7 @@
 										<h3 class='text-wh'>En sus modernas instalaciones, en un ambiente relajado y original.</h3>
 										<div class='buttons mt-4'>
 											<a href='about.php' class='btn mr-2'>Sobre nosotros</a>
-											<a href='booking.php' class='btn'>Reservar</a>
+											<a href='Packages.php' class='btn'>Paquetes</a>
 										</div>
 									</div>
 								</div>
@@ -123,7 +123,7 @@
 										<h3 class='text-wh'>Te ofrecemos un trato cordial y personalizado.</h3>
 										<div class='buttons mt-4'>
 											<a href='about.php' class='btn mr-2'>Sobre nosotros</a>
-											<a href='booking.php' class='btn'>Reservar</a>
+											<a href='Packages.php' class='btn'>Paquetes</a>
 										</div>
 									</div>
 								</div>
@@ -138,7 +138,7 @@
 										<h3 class='text-wh'>Te invitamos a conocernos.</h3>
 										<div class='buttons mt-4'>
 											<a href='about.php' class='btn mr-2'>Sobre nosotros</a>
-											<a href='booking.php' class='btn'>Reservar</a>
+											<a href='Packages.php' class='btn'>Paquetes</a>
 										</div>
 									</div>
 								</div>
@@ -340,7 +340,7 @@
 						<p class='mt-3'>El equipo de <strong>D' León</strong> esperamos que tengas ese evento especial
 		        que tanto esperas y agradecemos tu preferencia y esperamos verte de nuevo con nosotros.</p>
 						<div class='text-left mt-4'>
-								<a href='booking.php'>Reservar ahora</a>
+								<a href='contact.php'>Contactanos</a>
 						</div>
 					</div>
 				</div>
@@ -371,7 +371,7 @@
 						<div class='destinations-info'>
 							<div class='caption mb-lg-3'>
 								<h4>Básico</h4>
-								<a href='booking.php'>Reservar</a>
+								<a href='packages.php'>Ver</a>
 							</div>
 						</div>
 					</div>
@@ -392,7 +392,7 @@
 						<div class='destinations-info'>
 							<div class='caption mb-lg-3'>
 								<h4>D' León</h4>
-								<a href='booking.php'>Reservar</a>
+								<a href='packages.php'>Ver</a>
 							</div>
 						</div>
 					</div>
@@ -413,7 +413,7 @@
 						<div class='destinations-info'>
 							<div class='caption mb-lg-3'>
 								<h4>D' León Plus</h4>
-								<a href='booking.php'>Reservar</a>
+								<a href='packages.php'>Ver</a>
 							</div>
 						</div>
 					</div>
@@ -434,7 +434,7 @@
 						<div class='destinations-info'>
 							<div class='caption mb-lg-3'>
 								<h4>Hora Extra</h4>
-								<a href='booking.php'>Reservar</a>
+								<a href='packages.php'>Ver</a>
 							</div>
 						</div>
 					</div>
