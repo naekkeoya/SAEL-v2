@@ -17,15 +17,7 @@
 	      <title>Terraza D' León</title>
 	      <link rel='shortcut icon' href='images/favicon.ico'>
 
-	        <script>
-	            addEventListener('load', function () {
-	                setTimeout(hideURLbar, 0);
-	            }, false);
 
-	            function hideURLbar() {
-	                window.scrollTo(0, 1);
-	            }
-	        </script>
 
 	    	<!-- css files -->
 	        <link href='css/bootstrap.css' rel='stylesheet' type='text/css' /><!-- bootstrap css -->
@@ -89,59 +81,18 @@
 	    		<br>
 	    		<div class='row'>
 
-	          <div class=' col-12'>
-	              <div class='row'>
-	                <div class='col-sm-6 col-12'>
-	                  <div class='card'>
-	                    <div class='card-body'>
-	                      <h5 class='card-title'>Agregar Evento</h5>
-	                      <p class='card-text'>Permite agregar nuevos eventos.</p>
-	                      <a href='booking.php' class='btn btn-primary'>Acceder</a>
-	                    </div>
-	                  </div>
-	                </div>
-	                <br>
-	                <div class='col-sm-6 col-12'>
-	                  <div class='card'>
-	                    <div class='card-body'>
-	                      <h5 class='card-title'>Mostrar Eventos</h5>
-	                      <p class='card-text'>Permite ver todos los eventos que se tienen actualmente.</p>
-	                      <a href='show_event.php' class='btn btn-primary'>Acceder</a>
-	                    </div>
-	                  </div>
-	                </div>
-	              </div>
-	              <div class='row'>
-	                <div class='col-sm-6 col-12'>
-	                  <div class='card'>
-	                    <div class='card-body'>
-	                      <h5 class='card-title'>Editar Evento</h5>
-	                      <p class='card-text'>Permite editar la información de un evento registrado.</p>
-	                      <a href='search_event.php' class='btn btn-primary'>Acceder</a>
-	                    </div>
-	                  </div>
-	                </div>
-	                <div class='col-sm-6 col-12'>
-	                  <div class='card'>
-	                    <div class='card-body'>
-	                      <h5 class='card-title'>Eliminar Eventos.</h5>
-	                      <p class='card-text'>Permite eliminar un evento registrado.</p>
-	                      <a href='search_event_delete.php' class='btn btn-primary'>Acceder</a>
-	                    </div>
-	                  </div>
-	                </div>
-									<div class='col-sm-6 col-12'>
-										<div class='card'>
-											<div class='card-body'>
-												<h5 class='card-title'>Calendario.</h5>
-												<p class='card-text'>Permite ver un calendario.</p>
-												<a href='calendar.php' class='btn btn-primary'>Acceder</a>
-											</div>
-										</div>
-									</div>
-	              </div>
-	            </div>
+					<table id='calendar'>
+						<caption> </caption>
+						<thead>
+							<tr>
+								<th>Lun</th><th>Mar</th><th>Mie</th><th>Jue</th><th>Vie</th><th>Sab</th><th>Dom</th>
+							</tr>
+						</thead>
 
+						<tbody>
+
+						</tbody>
+					</table>
 
 	        </div>
 	      </div>
@@ -300,17 +251,7 @@
 		<span class='closebtn'>&times;</span>
 		Error al conectar con la base de datos
 		</div>
-		<script>
-		var close = document.getElementsByClassName('closebtn');
-		var i;
-
-		for (i = 0; i < close.length; i++) {
-			close[i].onclick = function(){
-				var div = this.parentElement;
-				div.style.opacity = '0';
-				setTimeout(function(){ div.style.display = 'none'; }, 600);
-			}
-		}
-		</script>";
+		<script src='script.js' language='Javascript'> </script>
+		<";
 	}
 ?>
