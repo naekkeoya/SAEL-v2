@@ -89,6 +89,19 @@
 					<br>
 					<div class='row'>
 
+					<table id='calendar' class='table table-hover text-centered'>
+						<caption id='month'> </caption>
+						<thead>
+							<tr>
+								<th>Lun</th><th>Mar</th><th>Mie</th><th>Jue</th><th>Vie</th><th>Sab</th><th>Dom</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+					</div>
+					<br> <hr>
+
 						<div class=' col-12'>
 								<div class='row'>
 									<div class='col-sm-6 col-12'>
@@ -156,7 +169,7 @@
 				</div>
 			</section>
 			<!-- tour packages -->
-
+<script src='script.js' language='Javascript'> </script>
 			<!--footer -->
 			<footer>
 			<section class='footer footer_w3layouts_section_1its py-5'>

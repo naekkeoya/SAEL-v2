@@ -82,14 +82,31 @@
 	    <!-- //banner -->
 
 
+
 	    <!-- tour packages -->
 	    <section class='packages pt-5'>
+
 	    	<div class='container py-lg-4 py-sm-3'>
 	    		<h2 class='heading text-capitalize text-center'>Módulos SAEL</h2>
 	    		<br>
-	    		<div class='row'>
 
+					<div class='row'>
+					<table id='calendar' class='table table-hover text-centered'>
+						<caption id='month'> </caption>
+						<thead>
+							<tr>
+								<th>Lun</th><th>Mar</th><th>Mie</th><th>Jue</th><th>Vie</th><th>Sab</th><th>Dom</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+	        </div>
+					<br> <hr>
+
+	    		<div class='row'>
 	          <div class=' col-12'>
+
 	              <div class='row'>
 	                <div class='col-sm-6 col-12'>
 	                  <div class='card'>
@@ -205,7 +222,7 @@
 	    </section>
 	    </footer>
 	    <!-- //footer -->
-
+		<script src='script.js' language='Javascript'> </script>
 	    <!-- copyright -->
 	    <div class='copyright py-3 text-center'>
 	    	<p>© 2019 SAEL. Todos los derechos reservados.

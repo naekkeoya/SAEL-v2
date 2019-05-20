@@ -77,12 +77,12 @@
 	    <!-- tour packages -->
 	    <section class='packages pt-5'>
 	    	<div class='container py-lg-4 py-sm-3'>
-	    		<h2 class='heading text-capitalize text-center'>Módulo Eventos</h2>
+	    		<h2 class='heading text-capitalize text-center'>Calendario</h2>
 	    		<br>
 	    		<div class='row'>
 
-					<table id='calendar'>
-						<caption> </caption>
+					<table id='calendar' class='table table-hover text-centered'>
+						<caption id='month'> </caption>
 						<thead>
 							<tr>
 								<th>Lun</th><th>Mar</th><th>Mie</th><th>Jue</th><th>Vie</th><th>Sab</th><th>Dom</th>
@@ -145,6 +145,9 @@
 	    		</div>
 	    	</div>
 	    </section>
+
+			<script src='script.js' language='Javascript'> </script>
+
 	    </footer>
 	    <!-- //footer -->
 
@@ -251,7 +254,7 @@
 		<span class='closebtn'>&times;</span>
 		Error al conectar con la base de datos
 		</div>
-		<script src='script.js' language='Javascript'> </script>
+
 		<";
 	}
 ?>
